@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SiAzuredataexplorer } from "react-icons/si";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,12 +11,14 @@ function Navbar() {
   };
 
   return (
-    <header className="px-3 md:px-32 py-5">
+    <header className="px-3 md:px-36 py-5">
       <nav className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-green-500 flex items-center">
-          Explora<span className="text-white pr-2">Local</span>
-          <SiAzuredataexplorer />
-        </h1>
+        <Link to="/">
+          <h1 className="text-3xl font-bold text-green-500 flex items-center">
+            Explora<span className="text-white pr-2">Local</span>
+            <SiAzuredataexplorer />
+          </h1>
+        </Link>
         <div className="md:hidden">
           <button onClick={toggleMenu}>
             {isOpen ? <FaTimes size={30} /> : <FaBars size={30} />}

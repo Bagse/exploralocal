@@ -8,7 +8,7 @@ function Banner() {
         alt="banner plaza de armas"
         className="w-full h-[480px] md:h-[550px] object-cover opacity-80 md:opacity-70"
       />
-      <div className="absolute z-10 top-28 left-5 md:left-32 space-y-7 md:space-y-10 font-mont">
+      <div className="absolute z-10 top-28 left-5 md:left-36 space-y-7 md:space-y-10 font-mont">
         <h2 className="text-4xl md:text-7xl font-bold">
           Explora Cusco a través de sus sabores y lugares!
         </h2>
