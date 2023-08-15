@@ -53,11 +53,17 @@ function Categories() {
         <CardItems
           title="Dónde comer y comprar"
           itemsData={categoriesData.comerComprar}
+          to="/donde-comer-y-comprar"
         />
-        <CardItems title="Turismo local" itemsData={categoriesData.turismo} />
+        <CardItems
+          title="Turismo local"
+          itemsData={categoriesData.turismo}
+          to="/turismo"
+        />
         <CardItems
           title="Apps de comida y transporte"
           itemsData={categoriesData.appMoviles}
+          to="/apps-moviles"
         />
       </div>
     </div>

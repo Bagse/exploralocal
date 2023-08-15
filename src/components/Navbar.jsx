@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SiAzuredataexplorer } from "react-icons/si";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,18 +30,29 @@ function Navbar() {
           } md:relative md:flex md:items-center w-full md:w-auto`}
         >
           <ul className="md:flex-row md:text-lg items-center flex flex-col gap-10 place-content-center bg-[#181719] h-screen text-xl md:h-0 uppercase font-poppins">
-            <li className="block hover:underline transition underline-offset-8">
-              comer y comprar
-            </li>
-            <li className="block hover:underline transition underline-offset-8">
-              turismo
-            </li>
-            <li className="block hover:underline transition underline-offset-8">
-              apps móviles
-            </li>
-            <li className="block hover:underline transition underline-offset-8">
-              contacto
-            </li>
+            <NavLink to="/donde-comer-y-comprar">
+              <li className="block hover:underline transition underline-offset-8">
+                dónde comer y comprar
+              </li>
+            </NavLink>
+
+            <NavLink to="/turismo">
+              <li className="block hover:underline transition underline-offset-8">
+                turismo
+              </li>
+            </NavLink>
+
+            <NavLink to="/apps-moviles">
+              <li className="block hover:underline transition underline-offset-8">
+                apps móviles
+              </li>
+            </NavLink>
+
+            <NavLink to="/contacto">
+              <li className="block hover:underline transition underline-offset-8">
+                contacto
+              </li>
+            </NavLink>
           </ul>
           <div className="absolute top-0 right-0 p-4">
             <button
