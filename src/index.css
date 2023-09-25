@@ -12,3 +12,11 @@
 h1{
     font-family: "Poppins", sans-serif;
 }
+
+input{
+    color: black;
+}
+
+textarea{
+    color: black;
+}

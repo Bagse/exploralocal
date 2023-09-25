@@ -50,21 +50,23 @@ function Categories() {
   return (
     <div className="px-3 md:px-36 py-5">
       <div className="flex flex-col gap-7 pt-5">
-        <CardItems
-          title="Dónde comer y comprar"
-          itemsData={categoriesData.comerComprar}
-          to="/donde-comer-y-comprar"
-        />
-        <CardItems
-          title="Turismo local"
-          itemsData={categoriesData.turismo}
-          to="/turismo"
-        />
-        <CardItems
-          title="Apps de comida y transporte"
-          itemsData={categoriesData.appMoviles}
-          to="/apps-moviles"
-        />
+          <>
+            <CardItems
+              title="Dónde comer y comprar"
+              itemsData={categoriesData.comerComprar}
+              to="/donde-comer-y-comprar"
+            />
+            <CardItems
+              title="Turismo local"
+              itemsData={categoriesData.turismo}
+              to="/turismo"
+            />
+            <CardItems
+              title="Apps de comida y transporte"
+              itemsData={categoriesData.appMoviles}
+              to="/apps-moviles"
+            />
+          </>
       </div>
     </div>
   );
