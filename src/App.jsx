@@ -6,6 +6,7 @@ import AppsMoviles from "./pages/AppsMoviles";
 import Contacto from "./pages/Contacto";
 import ComerComprar from "./pages/ComerComprar";
 import Footer from "./components/Footer";
+import InfoDetails from "./pages/InfoDetails";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/info/:title" element={<InfoDetails />} />
         <Route path="/donde-comer-y-comprar" element={<ComerComprar />} />
         <Route path="/turismo" element={<Turismo />} />
         <Route path="/apps-moviles" element={<AppsMoviles />} />

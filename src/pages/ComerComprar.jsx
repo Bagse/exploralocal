@@ -9,7 +9,7 @@ function ComerComprar() {
 
   useEffect(() => {
     axios
-      .get("https://apimocha.com/exploralocal/items")
+      .get("https://apimocha.com/apilura/items")
       .then((response) => {
         const showData = response.data;
 

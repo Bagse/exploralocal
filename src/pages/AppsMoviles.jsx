@@ -9,7 +9,8 @@ function AppsMoviles() {
 
   useEffect(() => {
     axios
-      .get("https://apimocha.com/apilura/items")
+      .get("https://apimocha.com/exploralocal/items")
+      // https://apimocha.com/apilura/items
       .then((response) => {
         const showData = response.data;
 

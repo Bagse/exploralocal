@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <header className="px-3 md:px-40 py-5">
+    <header className="px-3 lg:px-40 py-5">
       <nav className="flex justify-between items-center">
         <Link to="/">
           <h1 className="text-3xl font-bold text-green-500 flex items-center">
@@ -19,7 +19,7 @@ function Navbar() {
             <SiAzuredataexplorer />
           </h1>
         </Link>
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={toggleMenu}>
             {isOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
           </button>
@@ -27,9 +27,9 @@ function Navbar() {
         <div
           className={`${
             isOpen ? "fixed inset-0 bg-black bg-opacity-50 z-50" : "hidden"
-          } md:relative md:flex md:items-center w-full md:w-auto`}
+          } lg:relative lg:flex md:items-center w-full lg:w-auto`}
         >
-          <ul className="md:flex-row md:text-lg items-center flex flex-col gap-10 place-content-center bg-[#181719] h-screen text-xl md:h-0 uppercase font-poppins">
+          <ul className="lg:flex-row lg:text-lg items-center flex flex-col gap-10 place-content-center bg-[#181719] h-screen text-xl lg:h-0 uppercase font-poppins">
             <NavLink to="/donde-comer-y-comprar">
               <li className="block hover:underline transition underline-offset-8">
                 dónde comer y comprar
@@ -58,7 +58,7 @@ function Navbar() {
             <button
               onClick={toggleMenu}
               type="button"
-              className="text-white focus:outline-none md:hidden"
+              className="text-white focus:outline-none lg:hidden"
             >
               <FaTimes size={30} />
             </button>
