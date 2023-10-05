@@ -11,7 +11,7 @@ function Categories() {
 
   useEffect(() => {
     axios
-      .get("https://apimocha.com/exploralocal/items")
+      .get("https://api-exploralocal.onrender.com/items")
       .then((response) => {
         const showData = response.data;
 

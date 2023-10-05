@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <header className="px-3 lg:px-40 py-5">
+    <header className="px-3 lg:px-40 py-5 bg-gray-800">
       <nav className="flex justify-between items-center">
         <Link to="/">
           <h1 className="text-3xl font-bold text-green-500 flex items-center">

@@ -9,7 +9,7 @@ function AppsMoviles() {
 
   useEffect(() => {
     axios
-      .get("https://apimocha.com/exploralocal/items")
+      .get("https://api-exploralocal.onrender.com/items")
       // https://apimocha.com/apilura/items
       .then((response) => {
         const showData = response.data;
@@ -21,6 +21,7 @@ function AppsMoviles() {
 
         setAppsData(appsItems);
         setLoading(false);
+        window.scrollTo(0, 0);
       })
       .catch((error) => {
         setLoading(false);
@@ -28,7 +29,7 @@ function AppsMoviles() {
       });
   }, []);
   return (
-    <div className="py-20 px-3 md:px-40">
+    <div className="py-10 px-3 md:px-40">
       <h1 className="text-3xl md:text-4xl font-bold text-green-500">
         Apps De Comida Y Transporte
       </h1>

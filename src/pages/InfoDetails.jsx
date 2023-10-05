@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import slugify from "slugify";
 import { BounceLoader } from "react-spinners";
+import ButtonFood from "../components/Buttons/ButtonFood";
+import ButtonApp from "../components/Buttons/ButtonApp";
+import {IoLogoGooglePlaystore, IoLogoAppleAppstore} from "react-icons/io5"
 
 function InfoDetails() {
   const { title } = useParams();
@@ -13,7 +16,7 @@ function InfoDetails() {
     const fechInfo = async () => {
       try {
         const response = await axios.get(
-          `https://apimocha.com/exploralocal/items`
+          `https://api-exploralocal.onrender.com/items`
         );
 
         const formattedTitleSlug = slugify(title, {
@@ -60,14 +63,7 @@ function InfoDetails() {
 
   // Renderizar elementos adicionales según la categoría
   const webLink = info.web ? (
-    <a
-      href={info.web}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-sky-500 mt-3 px-2 py-3 flex justify-center rounded-full w-[166px] hover:outline outline-2 font-bold transition"
-    >
-      Visitar página web
-    </a>
+    <ButtonFood linkweb={info.web}/>
   ) : null;
   const ubicationMap = info.ubication ? (
     <iframe
@@ -77,33 +73,19 @@ function InfoDetails() {
     ></iframe>
   ) : null;
   const buttonAppstore = info.appstore ? (
-    <a
-      href={info.appstore}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-sky-500 mt-3 px-2 py-3 flex justify-center rounded-full w-[166px] hover:outline outline-2 font-bold transition"
-    >
-      Visitar AppStore
-    </a>
+    <ButtonApp linkapp={info.appstore} iconapp={<IoLogoAppleAppstore size={30}/>} titleapp={"App Store"}/>
   ) : null;
   const buttonPlaystore = info.googleplay ? (
-    <a
-      href={info.googleplay}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-sky-500 mt-3 px-2 py-3 flex justify-center rounded-full w-[166px] hover:outline outline-2 font-bold transition"
-    >
-      Visitar PlayStore
-    </a>
+    <ButtonApp linkapp={info.googleplay} iconapp={<IoLogoGooglePlaystore size={30}/>} titleapp={"Play Store"}/>
   ) : null;
 
   return (
-    <div className="py-14 px-3 lg:px-40">
+    <div className="py-10 px-3 lg:px-40">
       <div className="flex flex-col lg:flex-row gap-10">
         <img
           src={info.image1}
           alt=""
-          className="md:w-[580px] md:h-[420px] object-cover"
+          className="md:w-[580px] md:h-[440px] object-cover"
         />
 
         <div className="flex flex-col gap-6">
@@ -113,7 +95,7 @@ function InfoDetails() {
             <p className="text-[17px]">{info.description2}</p>
             <p className="text-[17px]">{info.description3}</p>
             {webLink}
-            <div className="flex gap-3">
+            <div className="flex gap-5">
               {buttonPlaystore}
               {buttonAppstore}
             </div>

@@ -9,7 +9,7 @@ function ComerComprar() {
 
   useEffect(() => {
     axios
-      .get("https://apimocha.com/apilura/items")
+      .get("https://api-exploralocal.onrender.com/items")
       .then((response) => {
         const showData = response.data;
 
@@ -20,6 +20,7 @@ function ComerComprar() {
 
         setComerComprarData(comerComprarItems);
         setLoading(false);
+        window.scrollTo(0, 0);
       })
       .catch((error) => {
         setLoading(false);
@@ -28,7 +29,7 @@ function ComerComprar() {
   }, []);
 
   return (
-    <div className="py-20 px-3 md:px-40">
+    <div className="py-10 px-3 md:px-40">
       <h1 className="text-3xl md:text-4xl font-bold text-green-500">
         Dónde comer y comprar
       </h1>

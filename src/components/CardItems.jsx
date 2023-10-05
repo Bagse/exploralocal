@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CardSkeleton from "./CardSkeleton";
 import Card from "./Card";
+import ButtonSeeMore from "../components/Buttons/ButtonSeeMore";
 
 function CardItems(props) {
   const { title, itemsData, to } = props;
@@ -15,9 +16,7 @@ function CardItems(props) {
             {title}
           </h3>
           <Link to={to}>
-            <button className="bg-green-400 px-2 rounded-lg text-sm md:text-lg text-white font-poppins font-medium hover:outline outline-white">
-              Ver más
-            </button>
+            <ButtonSeeMore />
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-7 my-7">
@@ -38,9 +37,7 @@ function CardItems(props) {
           {title}
         </h3>
         <Link to={to}>
-          <button className="bg-green-400 px-2 rounded-lg text-sm md:text-lg text-white font-poppins font-medium hover:outline outline-white">
-            Ver más
-          </button>
+          <ButtonSeeMore />
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-7 my-7">
