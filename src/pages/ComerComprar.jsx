@@ -31,7 +31,7 @@ function ComerComprar() {
   return (
     <div className="py-10 px-3 md:px-40">
       <h1 className="text-3xl md:text-4xl font-bold text-green-500">
-        Dónde comer y comprar
+        Restaurantes, bares y mercados
       </h1>
       <p className="text-lg text-gray-300">
         Encuentra los mejores restaurantes, bares y lugares de compra en nuestra ciudad.

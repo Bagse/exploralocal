@@ -5,7 +5,22 @@ import slugify from "slugify";
 import { BounceLoader } from "react-spinners";
 import ButtonFood from "../components/Buttons/ButtonFood";
 import ButtonApp from "../components/Buttons/ButtonApp";
-import {IoLogoGooglePlaystore, IoLogoAppleAppstore} from "react-icons/io5"
+import { IoLogoGooglePlaystore, IoLogoAppleAppstore } from "react-icons/io5";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 800, // Velocidad de transición
+  slidesToShow: 1, // Mostrar solo una imagen a la vez
+  slidesToScroll: 1,
+  autoplay: true, // Activar la reproducción automática
+  autoplaySpeed: 4000,
+  pauseOnHover: true,
+  fade: true,
+};
 
 function InfoDetails() {
   const { title } = useParams();
@@ -62,9 +77,8 @@ function InfoDetails() {
   }
 
   // Renderizar elementos adicionales según la categoría
-  const webLink = info.web ? (
-    <ButtonFood linkweb={info.web}/>
-  ) : null;
+  const hasAppLinks = info.googleplay || info.appstore;
+  const webLink = info.web ? <ButtonFood linkweb={info.web} /> : null;
   const ubicationMap = info.ubication ? (
     <iframe
       src={info.ubication}
@@ -73,20 +87,46 @@ function InfoDetails() {
     ></iframe>
   ) : null;
   const buttonAppstore = info.appstore ? (
-    <ButtonApp linkapp={info.appstore} iconapp={<IoLogoAppleAppstore size={30}/>} titleapp={"App Store"}/>
+    <ButtonApp
+      linkapp={info.appstore}
+      iconapp={<IoLogoAppleAppstore size={30} />}
+      titleapp={"App Store"}
+    />
   ) : null;
   const buttonPlaystore = info.googleplay ? (
-    <ButtonApp linkapp={info.googleplay} iconapp={<IoLogoGooglePlaystore size={30}/>} titleapp={"Play Store"}/>
+    <ButtonApp
+      linkapp={info.googleplay}
+      iconapp={<IoLogoGooglePlaystore size={30} />}
+      titleapp={"Play Store"}
+    />
   ) : null;
 
   return (
     <div className="py-10 px-3 lg:px-40">
       <div className="flex flex-col lg:flex-row gap-10">
-        <img
-          src={info.image1}
-          alt=""
-          className="md:w-[580px] md:h-[440px] object-cover"
-        />
+        <Slider {...settings} className="ml-6 md:ml-0 w-[320px] h-auto md:w-[580px] md:h-[440px] object-cover rounded-lg shadow shadow-white">
+          <div>
+            <img
+              src={info.image1}
+              alt={`imagen slider de ${info.title}`}
+              className="md:w-[580px] md:h-[440px] object-cover rounded-lg"
+            />
+          </div>
+          <div>
+            <img
+              src={info.image2}
+              alt={`imagen slider de ${info.title}`}
+              className="md:w-[580px] md:h-[440px] object-cover rounded-lg"
+            />
+          </div>
+          <div>
+            <img
+              src={info.image3}
+              alt={`imagen slider de ${info.title}`}
+              className="md:w-[580px] md:h-[440px] object-cover rounded-lg"
+            />
+          </div>
+        </Slider>
 
         <div className="flex flex-col gap-6">
           <h1 className="text-4xl font-bold text-green-500">{info.title}</h1>
@@ -95,10 +135,17 @@ function InfoDetails() {
             <p className="text-[17px]">{info.description2}</p>
             <p className="text-[17px]">{info.description3}</p>
             {webLink}
-            <div className="flex gap-5">
-              {buttonPlaystore}
-              {buttonAppstore}
-            </div>
+            {hasAppLinks && (
+              <div className="flex flex-col gap-5">
+                <p className="text-sm text-gray-400 font-semibold">
+                  Descárgalo desde:
+                </p>
+                <div className="flex gap-5">
+                  {buttonPlaystore}
+                  {buttonAppstore}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

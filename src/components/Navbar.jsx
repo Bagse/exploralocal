@@ -20,19 +20,19 @@ function Navbar() {
           </h1>
         </Link>
         <div className="lg:hidden">
-          <button onClick={toggleMenu}>
+          <button onClick={toggleMenu} className="border-none">
             {isOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
           </button>
         </div>
         <div
           className={`${
-            isOpen ? "fixed inset-0 bg-black bg-opacity-50 z-50" : "hidden"
+            isOpen ? "fixed inset-0 bg-black bg-opacity-50 z-50 outline-none" : "hidden"
           } lg:relative lg:flex md:items-center w-full lg:w-auto`}
         >
           <ul className="lg:flex-row lg:text-lg items-center flex flex-col gap-10 place-content-center bg-[#181719] h-screen text-xl lg:h-0 uppercase font-poppins">
             <NavLink to="/donde-comer-y-comprar">
               <li className="block hover:underline transition underline-offset-8">
-                dónde comer y comprar
+              Restaurantes y más
               </li>
             </NavLink>
 
@@ -58,7 +58,7 @@ function Navbar() {
             <button
               onClick={toggleMenu}
               type="button"
-              className="text-white focus:outline-none lg:hidden"
+              className="text-white outline-none lg:hidden border-none"
             >
               <FaTimes size={30} />
             </button>

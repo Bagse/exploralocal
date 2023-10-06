@@ -52,7 +52,7 @@ function Categories() {
       <div className="flex flex-col gap-7 pt-5">
           <>
             <CardItems
-              title="Dónde comer y comprar"
+              title="Restaurantes y más"
               itemsData={categoriesData.comerComprar}
               to="/donde-comer-y-comprar"
             />
@@ -62,7 +62,7 @@ function Categories() {
               to="/turismo"
             />
             <CardItems
-              title="Apps de comida y transporte"
+              title="Apps móviles"
               itemsData={categoriesData.appMoviles}
               to="/apps-moviles"
             />
