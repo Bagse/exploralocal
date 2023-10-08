@@ -10,6 +10,10 @@ function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className="px-3 lg:px-40 py-5 bg-gray-800">
       <nav className="flex justify-between items-center">
@@ -30,26 +34,26 @@ function Navbar() {
           } lg:relative lg:flex md:items-center w-full lg:w-auto`}
         >
           <ul className="lg:flex-row lg:text-lg items-center flex flex-col gap-10 place-content-center bg-[#181719] h-screen text-xl lg:h-0 uppercase font-poppins">
-            <NavLink to="/donde-comer-y-comprar">
+            <NavLink to="/donde-comer-y-comprar" onClick={closeMenu}>
               <li className="block hover:underline transition underline-offset-8">
               Restaurantes y más
               </li>
             </NavLink>
 
-            <NavLink to="/turismo">
+            <NavLink to="/turismo" onClick={closeMenu}>
               <li className="block hover:underline transition underline-offset-8">
                 turismo
               </li>
             </NavLink>
 
-            <NavLink to="/apps-moviles">
+            <NavLink to="/apps-moviles" onClick={closeMenu}>
               <li className="block hover:underline transition underline-offset-8">
                 apps móviles
               </li>
             </NavLink>
 
             <NavLink to="/contacto">
-              <li className="block hover:underline transition underline-offset-8">
+              <li className="block hover:underline transition underline-offset-8" onClick={closeMenu}>
                 contacto
               </li>
             </NavLink>

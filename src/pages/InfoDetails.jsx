@@ -104,26 +104,26 @@ function InfoDetails() {
   return (
     <div className="py-10 px-3 lg:px-40">
       <div className="flex flex-col lg:flex-row gap-10">
-        <Slider {...settings} className="ml-6 md:ml-0 w-[320px] h-auto md:w-[580px] md:h-[440px] object-cover rounded-lg shadow shadow-white">
+        <Slider {...settings} className="ml-6 md:ml-0 w-[320px] h-[250px] md:w-[580px] md:h-[440px] object-cover rounded-lg shadow shadow-white">
           <div>
             <img
               src={info.image1}
               alt={`imagen slider de ${info.title}`}
-              className="md:w-[580px] md:h-[440px] object-cover rounded-lg"
+              className="w-[320px] md:w-[580px] h-[250px] md:h-[440px] object-cover rounded-lg"
             />
           </div>
           <div>
             <img
               src={info.image2}
               alt={`imagen slider de ${info.title}`}
-              className="md:w-[580px] md:h-[440px] object-cover rounded-lg"
+              className="w-[320px] md:w-[580px] h-[250px] md:h-[440px] object-cover rounded-lg"
             />
           </div>
           <div>
             <img
               src={info.image3}
               alt={`imagen slider de ${info.title}`}
-              className="md:w-[580px] md:h-[440px] object-cover rounded-lg"
+              className="w-[320px] md:w-[580px] h-[250px] md:h-[440px] object-cover rounded-lg"
             />
           </div>
         </Slider>
