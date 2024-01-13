@@ -1,4 +1,6 @@
-# React + Vite
+![image](https://github.com/Bagse/exploralocal/assets/102260190/f0065271-45c9-49d8-9c47-f06bbc43b1c3)
+
+# ExploraLocal
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
